@@ -1,7 +1,7 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [newTitle, setNewTitle] = useState("");
   const [newAmount, setNewAmount] = useState("");
   const [newDate, setNewDate] = useState("");
@@ -42,7 +42,8 @@ const ExpenseForm = () => {
       amount: newAmount,
       date: new Date(newDate),
     };
-    console.log(expenseData);
+    // console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
     setNewTitle("");
     setNewAmount("");
     setNewDate("");
@@ -83,3 +84,14 @@ const ExpenseForm = () => {
 };
 
 export default ExpenseForm;
+
+
+
+
+<div>
+        // <div id="alert">
+        //   <h2>Are you sure?</h2>
+        //   <p>These changes can't be reverted!</p>
+        //   <button>Proceed</button>
+        // </div>
+      </div>
